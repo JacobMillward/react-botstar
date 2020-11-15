@@ -1,1 +1,2 @@
-export const test = () => console.log('test!');
+export * from './BotStarWidget';
+export { BotStarSettings } from './BotStarSettings';
