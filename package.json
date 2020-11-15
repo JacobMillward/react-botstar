@@ -14,10 +14,13 @@
     "build": "rollup -c",
     "watch": "rollup -cw"
   },
-  "peerDependencies": {},
-  "dependencies": {},
+  "peerDependencies": {
+    "react": "^17.0.1"
+  },
   "devDependencies": {
+    "@types/react": "^16.9.56",
     "prettier": "^2.1.2",
+    "react": "^17.0.1",
     "rollup": "^2.33.2",
     "rollup-plugin-typescript2": "^0.29.0",
     "typescript": "^4.0.5"
