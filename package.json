@@ -1,0 +1,25 @@
+{
+  "name": "react-botstar",
+  "version": "0.6.0",
+  "description": "Integrate BotStar widgets into your react application",
+  "author": "Jacob Millward <jacob@millward.dev>",
+  "license": "Apache-2.0",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "files": [
+    "dist"
+  ],
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "rollup -c",
+    "watch": "rollup -cw"
+  },
+  "peerDependencies": {},
+  "dependencies": {},
+  "devDependencies": {
+    "prettier": "^2.1.2",
+    "rollup": "^2.33.2",
+    "rollup-plugin-typescript2": "^0.29.0",
+    "typescript": "^4.0.5"
+  }
+}
