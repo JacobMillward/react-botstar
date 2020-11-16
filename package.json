@@ -3,6 +3,19 @@
   "version": "0.6.0",
   "description": "Integrate BotStar widgets into your react application",
   "author": "Jacob Millward <jacob@millward.dev>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jacobmillward/react-botstar"
+  },
+  "bugs": {
+    "url": "https://github.com/JacobMillward/react-botstar/issues"
+  },
+  "homepage": "https://github.com/jacobmillward/react-botstar",
+  "keywords": [
+    "botstar",
+    "chatbot",
+    "react"
+  ],
   "license": "Apache-2.0",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
