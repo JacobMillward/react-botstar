@@ -1,6 +1,6 @@
 {
   "name": "react-botstar",
-  "version": "0.6.0",
+  "version": "0.6.1",
   "description": "Integrate BotStar widgets into your react application",
   "author": "Jacob Millward <jacob@millward.dev>",
   "repository": {
