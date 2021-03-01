@@ -21,9 +21,8 @@ export const MyBot = (props) => (
       user: {
         email: 'joe@bloggs.com'
       }
-
-      onBotStarInitialised={ (api) => setBotStarApi(api) }
-    }} />);
+    }}
+    onBotStarInitialised={ (api) => setBotStarApi(api) } />);
 ```
 
 By default, displays the bot in `inline` mode.
