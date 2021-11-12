@@ -1,15 +1,15 @@
 import { BotStarApiFunc, createBotStarApi } from './BotStarApi';
 import { BotStarSettings } from './BotStarSettings';
 
-type BotStarWindow = typeof window & {
-  BotStarApi?: any;
+export interface BotStarWindow extends Window {
   BotStar?: any;
+  BotStarApi?: BotStarApiFunc;
   BotStarUp?: boolean;
-};
+}
+
+declare let window: BotStarWindow;
 
 export type BotStarInitialisedCallback = (api: BotStarApiFunc) => void;
-
-const bWindow = window as BotStarWindow;
 
 export const createBotStarWidgetScript = (
   scriptId: string,
@@ -21,7 +21,8 @@ export const createBotStarWidgetScript = (
   botStarWidget.async = true;
   botStarWidget.src = 'https://widget.botstar.com/static/js/widget.js';
   if (onBotStarInitialised) {
-    botStarWidget.onload = () => onBotStarInitialised(bWindow.BotStarApi);
+    botStarWidget.onload = () =>
+      onBotStarInitialised(window.BotStarApi ?? (() => {}));
   }
 
   const firstScript = document.getElementsByTagName('script')[0];
@@ -34,19 +35,19 @@ export const teardownBotStar = (scriptId: string) => {
   widget?.parentElement?.removeChild(widget);
 
   // Clear out API scope
-  delete bWindow.BotStarApi;
+  delete window.BotStarApi;
 
   // Clear out BotStar settings
-  delete bWindow.BotStar;
-  delete bWindow.BotStarUp;
+  delete window.BotStar;
+  delete window.BotStarUp;
 };
 
 export const setBotStarGlobalSettings = (
   settings: Partial<BotStarSettings>
 ) => {
-  bWindow.BotStar = { ...settings };
+  window.BotStar = { ...settings };
 };
 
 export const setupBotStarApi = () => {
-  bWindow.BotStarApi = createBotStarApi();
+  window.BotStarApi = createBotStarApi();
 };

@@ -20,5 +20,5 @@ export const createBotStarApi = () => {
   };
   BotStarApi.q = BotStarApi.q || [];
 
-  const t = BotStarApi as BotStarApiFunc;
+  return BotStarApi as BotStarApiFunc;
 };
