@@ -8,7 +8,7 @@ export type BotStarApiFunc = ((
   ((method: 'close') => void) &
   ((method: 'update', updateData: Partial<BotStarSettings>) => void) &
   ((method: 'onOpen', onOpenListener: () => void) => void) &
-  ((method: 'onOpen', onCloseListener: () => void) => void);
+  ((method: 'onClose', onCloseListener: () => void) => void);
 
 export const createBotStarApi = () => {
   // Reconstructed from the BotStar Snippet
