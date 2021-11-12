@@ -1,5 +1,4 @@
 import { BotStarSettings } from './BotStarSettings';
-import * as React from 'react';
 import {
   BotStarInitialisedCallback,
   createBotStarWidgetScript,
@@ -7,6 +6,7 @@ import {
   setupBotStarApi,
   teardownBotStar
 } from './BotStar';
+import { useEffect, useRef } from 'react';
 
 // Random UUID to prevent clashes
 const botStarWidgetId = 'botstar-widget-2875b3ff-d61e-4840-b587-91445f16c387';
@@ -28,12 +28,12 @@ export const BotStarWidget: React.FC<BotStarWidgetProps> = ({
   children,
   ...props
 }) => {
-  const onBotStarInitialisedRef = React.useRef<BotStarInitialisedCallback>();
+  const onBotStarInitialisedRef = useRef<BotStarInitialisedCallback>();
   onBotStarInitialisedRef.current = onBotStarInitialised;
 
-  const isFirstLoad = React.useRef(true);
+  const isFirstLoad = useRef(true);
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (isLoading) {
       // Don't do anything if we're told we're loading
       return;
